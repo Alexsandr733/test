@@ -5,17 +5,19 @@
             <title>Главная</title>
             <link rel="stylesheet" href="style.css" >
             <script type="text/javascript" src="jquery-3.1.1.js"></script>
-            <script src="main.js" defer></script>	
+            <script src="main.js" defer></script>
         </head>
         <body>
-             <div id="content"><p id="num1"></p>
-                <p id="line">+</p>
-                <p id="num2"></p>
-                <p id="line">=</p>
-                <input type="text" style="display:none" id="n3" onkeyup="check2()" size="3">
+             <div id="content">
+							<p id="num1"></p>
+              <p id="line">+</p>
+              <p id="num2"></p>
+              <p id="line">=</p>
+                <input type="text" style="display:none" id="n3" onkeyup="check('#n3',)" size="3">
             </div>
-            <div id="content2"><input type="text" id="n1" onkeyup="plus()" size="3">
-                <input type="text" style="display:none" id="n2" onkeyup="check()" size="3">
+            <div id="content2">
+							<input type="text" id="n1" onkeyup="plus()" size="3">
+              <input type="text" style="display:none" id="n2" onkeyup="check('#n2')" size="3">
             </div>
             <canvas id="c1" width="1000" height="263"></canvas>
         </body>
