@@ -36,63 +36,25 @@ function canvas (start, num){
 canvas(39,num1);
 $("#n1").offset({top:325, left:controlX2-10});
 	alert (num1);
-var inps;
-function plus(){
-
-	alert (num1);
-		var in1 = $('#n1').val();
-		//	alert (in1);
-    //var in1 = document.getElementById('n1').value;
-		alert (in1);
-    in1 = parseInt(in1);
-		alert (in1);
-    color1 = document.getElementById('n1');
-    //color1 = document.getElementById('n1');
-    colorb1 = document.getElementById('num1');
-    if (in1 == num1 ) {
-        color1.style.color = 'black';
-        colorb1.style.backgroundColor = 'white';
-        $("#n2").show();
-				canvas(endX1, num2);
-        $("#n2").offset({top:325, left:controlX2-10});
-    }
-    else{
-
-
-				 //color1.style.color = 'red';
-         //colorb1.style.backgroundColor = 'yellow';
-    }
-}
+var inps, next, checks, style;
 var endX2, control2X2;
 
-function check(inps){
+function check(inps,next,checks,style){
 		var in2 = $(inps).val();
     in2 = parseInt(in2);
-    color2 = document.getElementById('n2');
-    colorb2 = document.getElementById('num2');
-		if (num2==in2) {
-				var colorr = $("#num2");
+		if (checks==in2) {
+				var colorr = $(style);
 				colorr.addClass("right");
-			  $("#n3").show();
+			  $(next).show();
+			if(inps == '#n1')
+			{
+				canvas(endX1, num2);
+				$("#n2").offset({top:325, left:controlX2-10});
+				i++;
+			}
     }
     else{
-			var colorf = $("#num2");
+			var colorf = $(style);
 			colorf.addClass("wrong");
     }
 }
-/*
-function check2(){
-    var in3 = document.getElementById('n3').value;
-    in3 = parseInt(in3);
-    color3 = document.getElementById('n3');
-    colorb3 = document.getElementById('num3');
-    if (num3 == in3) {
-        color3.style.color = 'black';
-        color3.style.backgroundColor = 'white';
-        document.getElementById('num3').innerHTML=num3;
-    }
-    else{
-        color3.style.color = 'red';
-        color3.style.backgroundColor = 'yellow';
-    }
-}*/
