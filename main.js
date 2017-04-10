@@ -4,6 +4,8 @@ $('#n2').val('');
 
 $('#n3').val('');
 function getRandom(min, max)
+
+
 	{
 
 	  return Math.round(Math.random() * (max - min) + min);
