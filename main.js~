@@ -1,7 +1,6 @@
 
 $('#n1').val('');
 $('#n2').val('');
-
 $('#n3').val('');
 function getRandom(min, max)
 	{
