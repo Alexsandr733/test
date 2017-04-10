@@ -1,14 +1,20 @@
+#maincontent{
+display: inline-block; //Для того, чтобы родитель воспринимался, как строчный элемент
+width: 500px; // Указать минимальное подходящее значение
+position: relative;
+}
+body{
+	text-align: center;
+}
+
 #c1 {
 	margin: 40px;
 	margin-bottom: 0;
 	margin-left: 0;
 }
 #content{
-	margin-left: 350px;
-	margin-top: 50px;
-
+	margin-top: 10%;
 }
-
 canvas{
 	margin-top: 0px;
 	background-image: url(sprite.png);
@@ -35,7 +41,6 @@ canvas{
 	width:30px;
 	font-size: 35px;
 }
-
 .wrong {
 color:red;
 background-color: yellow;

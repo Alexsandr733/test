@@ -14,8 +14,8 @@ num3=num1+num2;
 $('#num1').html(num1);
 $('#num2').html(num2);
 function canvas (start, num){
-	var canvas = document.getElementById('c1');
-	var ctx = canvas.getContext('2d');
+	var canvas = $('#c1');
+	var ctx = canvas[0].getContext('2d');
 	ctx.beginPath();
 	controlX1=start;
 	var controlY1=199;
@@ -32,13 +32,19 @@ function canvas (start, num){
 	ctx.lineTo(endX1-3,185);
 	ctx.stroke();
 }
-
+$("#n1").on("keyup", function() {
+  check('#n1','#n2',num1, '#num1')
+});
+$("#n2").on("keyup", function() {
+  check('#n2','#n3',num2, '#num2')
+});
+$("#n3").on("keyup", function() {
+  check('#n3','',num3,'#n3')
+});
 canvas(39,num1);
-$("#n1").offset({top:325, left:controlX2-10});
-	alert (num1);
+$("#n1").offset({top:385, left:controlX2-10});
 var inps, next, checks, style;
 var endX2, control2X2;
-
 function check(inps,next,checks,style){
 		var in2 = $(inps).val();
     in2 = parseInt(in2);
@@ -49,7 +55,7 @@ function check(inps,next,checks,style){
 			if(inps == '#n1')
 			{
 				canvas(endX1, num2);
-				$("#n2").offset({top:325, left:controlX2-10});
+				$("#n2").offset({top:385, left:controlX2-10});
 				i++;
 			}
     }
