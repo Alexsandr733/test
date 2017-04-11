@@ -1,8 +1,7 @@
 #maincontent{
-display: inline-block; //Для того, чтобы родитель воспринимался, как строчный элемент
-width: 500px; // Указать минимальное подходящее значение
-/*position: absolute;*/
-position:relative;
+	display: inline-block;
+	width: 500px;
+	position:relative;
 }
 body{
 	text-align: center;
@@ -19,7 +18,7 @@ body{
 canvas{
 	margin-top: 0px;
 	background-image: url(sprite.png);
-    background-position: left bottom;
+  background-position: left bottom;
 	background-repeat: no-repeat;
 }
 #num1{
@@ -43,8 +42,8 @@ canvas{
 	font-size: 35px;
 }
 .wrong {
-color:red;
-background-color: yellow;
+	color:red;
+	background-color: yellow;
 }
 .right {
 	color:black;
@@ -52,11 +51,11 @@ background-color: yellow;
 }
 #n1{
 	position: absolute;
-	top: 150px;
+	top: 300px;
 	display: inline-block;
 }
 #n2{
 	position: absolute;
-	top: 150px;
+	top: 300px;
 	/*display: inline-block;*/
 }
