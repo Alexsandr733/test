@@ -44,15 +44,13 @@ $("#n3").on("keyup", function() {
 canvas(39,num1);
 
 var inputs = [];
-inputs.push($("#n1:eq(0)"));
-inputs.push($("#n2:eq(1)"));
-inputs[0].css('left', function(){
+inputs.push($("#n1"));
+inputs.push($("#n2"));
 var pozleft = controlX2+30;
-return pozleft;
-}());
+inputs[0].css('left', pozleft);
 
 var inps, next, checks, style;
-var endX2, control2X2;
+var endX2, control2X2, pozleft2;
 function check(inps,next,checks,style){
 		var in2 = $(inps).val();
     in2 = parseInt(in2);
@@ -64,10 +62,8 @@ function check(inps,next,checks,style){
 			{
 				canvas(endX1, num2);
 				var cont = controlX2;
-				inputs[1].css('left', function(){
-				var pozleft2 = cont+30;
-				return pozleft2;
-			}());
+				pozleft2 = cont+30;
+				inputs[1].css('left', pozleft2);
 				//$("#n2").offset({top:385, left:controlX2-10});
 			}
     }
