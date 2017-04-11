@@ -1,3 +1,7 @@
+export function sayHi() {
+  alert("Hello!");
+};
+
 	$('#n1').val('');
 	$('#n2').val('');
 	$('#n3').val('');
