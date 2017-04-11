@@ -6,7 +6,7 @@
 		  return Math.round(Math.random() * (max - min) + min);
 		}
 	var num1=getRandom(6, 9);
-	var endX1, controlX1, controlX2,num, num1, num2, num3, result, color1, color2, color3, colorb1, colorb2, colorb3, start;
+	var endX1, controlX1, controlX2,num, num1, num2, num3, start;
 	var interval=14-num1;
 	var num2=getRandom(5, interval);
 	num3=num1+num2;
@@ -65,8 +65,8 @@ canvas(39,num1);
 	inputs.push($("#n2"));
 	var pozleft = controlX2-10;
 	inputs[0].css('left', pozleft);
-	var inps, next, checks, style;
-	var endX2, control2X2, pozleft2;
+	var inps, next, style;
+	var endX2, pozleft2;
 
 	function check(inps,next,style,obj){
 			if (obj.invalue == obj.rightValue)
