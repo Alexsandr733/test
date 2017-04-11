@@ -42,18 +42,19 @@ function canvas (start, num){
 }
 $("#n1").on("keyup", function() {
 	filling ('#n1',input1);
-	check('#n1','#n2',num1, '#num1',input1);
+	check('#n1','#n2', '#num1',input1);
 });
 $("#n2").on("keyup", function() {
 	filling ('#n2',input2);
-	check('#n2','#n3',num2, '#num2',input2);
+	check('#n2','#n3', '#num2',input2);
 });
 $("#n3").on("keyup", function() {
 	filling ('#n3',input3);
-	check('#n3','',num3,'#n3',input3);
+	check('#n3','','#n3',input3);
 });
 canvas(39,num1);
-	function filling (inps,obj) {
+	function filling (inps,obj)
+	{
 		var ins = $(inps).val();
 		ins = parseInt(ins);
 		obj.invalue=ins;
@@ -67,8 +68,9 @@ inputs[0].css('left', pozleft);
 var inps, next, checks, style;
 var endX2, control2X2, pozleft2;
 
-	function check(inps,next,checks,style,obj){
-			if (obj.invalue == obj.rightValue) {
+	function check(inps,next,style,obj){
+			if (obj.invalue == obj.rightValue)
+			{
 					var colorr = $(style);
 					colorr.addClass("right");
 				  $(next).show();
