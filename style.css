@@ -2,7 +2,7 @@
 display: inline-block; //Для того, чтобы родитель воспринимался, как строчный элемент
 width: 500px; // Указать минимальное подходящее значение
 /*position: absolute;*/
-/*position:relative;*/
+position:relative;
 }
 body{
 	text-align: center;
