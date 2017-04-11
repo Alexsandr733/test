@@ -64,13 +64,8 @@ function check(inps,next,checks,style){
 			{
 				canvas(endX1, num2);
 				var cont = controlX2;
-				alert(cont);
-				alert(inputs[1]);
 				inputs[1].css('left', function(){
-					alert('nen');
 				var pozleft2 = cont+30;
-				alert(cont);
-				alert(pozleft2);
 				return pozleft2;
 			}());
 				//$("#n2").offset({top:385, left:controlX2-10});
