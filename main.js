@@ -1,8 +1,7 @@
 	$('#n1').val('');
 	$('#n2').val('');
 	$('#n3').val('');
-	function getRandom(min, max)
-		{
+	function getRandom(min, max){
 		  return Math.round(Math.random() * (max - min) + min);
 		}
 	var num1=getRandom(6, 9);
@@ -53,8 +52,7 @@ $("#n3").on("keyup", function() {
 	check('#n3','','#n3',input3);
 });
 canvas(39,num1);
-	function filling (inps,obj)
-	{
+	function filling (inps,obj){
 		var ins = $(inps).val();
 		ins = parseInt(ins);
 		obj.invalue=ins;
@@ -82,7 +80,8 @@ canvas(39,num1);
 					inputs[1].css('left', pozleft2);
 				}
 	    }
-	    else{
+	    else
+			{
 				var colorf = $(style);
 				colorf.addClass("wrong");
 	    }
