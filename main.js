@@ -9,8 +9,16 @@ var num1=getRandom(6, 9);
 var endX1, controlX1, controlX2,num, num1, num2, num3, result, color1, color2, color3, colorb1, colorb2, colorb3, start;
 var interval=14-num1;
 var num2=getRandom(5, interval);
-
 num3=num1+num2;
+var input1 = {
+	rightValue: num1
+};
+var input2 = {
+	rightValue: num2
+};
+var input3 = {
+	rightValue: num3
+};
 $('#num1').html(num1);
 $('#num2').html(num2);
 function canvas (start, num){
@@ -33,43 +41,47 @@ function canvas (start, num){
 	ctx.stroke();
 }
 $("#n1").on("keyup", function() {
-  check('#n1','#n2',num1, '#num1');
+	filling ('#n1',input1);
+	check('#n1','#n2',num1, '#num1',input1);
 });
 $("#n2").on("keyup", function() {
-  check('#n2','#n3',num2, '#num2');
+	filling ('#n2',input2);
+	check('#n2','#n3',num2, '#num2',input2);
 });
 $("#n3").on("keyup", function() {
-  check('#n3','',num3,'#n3');
+	filling ('#n3',input3);
+	check('#n3','',num3,'#n3',input3);
 });
 canvas(39,num1);
+	function filling (inps,obj) {
+		var ins = $(inps).val();
+		ins = parseInt(ins);
+		obj.invalue=ins;
+	}
 
 var inputs = [];
 inputs.push($("#n1"));
 inputs.push($("#n2"));
 var pozleft = controlX2+30;
 inputs[0].css('left', pozleft);
-
 var inps, next, checks, style;
 var endX2, control2X2, pozleft2;
-function check(inps,next,checks,style){
-		var in2 = $(inps).val();
-    in2 = parseInt(in2);
-		if (checks==in2) {
-				var colorr = $(style);
-				colorr.addClass("right");
-			  $(next).show();
-			if(inps == '#n1')
-			{
-				canvas(endX1, num2);
-				var cont = controlX2;
-				pozleft2 = cont+30;
-				inputs[1].css('left', pozleft2);
-				//$("#n2").offset({top:385, left:controlX2-10});
-			}
-    }
 
-    else{
-			var colorf = $(style);
-			colorf.addClass("wrong");
-    }
-}
+	function check(inps,next,checks,style,obj){
+			if (obj.invalue == obj.rightValue) {
+					var colorr = $(style);
+					colorr.addClass("right");
+				  $(next).show();
+				if(inps == '#n1')
+				{
+					canvas(endX1, num2);
+					var cont = controlX2;
+					pozleft2 = cont+30;
+					inputs[1].css('left', pozleft2);
+				}
+	    }
+	    else{
+				var colorf = $(style);
+				colorf.addClass("wrong");
+	    }
+	}
