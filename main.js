@@ -67,10 +67,10 @@ function check(inps,next,checks,style){
 				alert(cont);
 				inputs.push($("#n2:eq(1)"));
 				inputs[1].css('left', function(){
-				var pozleft = controlX2+30;
-				alert(controlX2);
-				alert(pozleft);
-				return pozleft;
+				var pozleft2 = cont+30;
+				alert(cont);
+				alert(pozleft2);
+				return pozleft2;
 				});
 				//$("#n2").offset({top:385, left:controlX2-10});
 			}
