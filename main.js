@@ -33,16 +33,24 @@ function canvas (start, num){
 	ctx.stroke();
 }
 $("#n1").on("keyup", function() {
-  check('#n1','#n2',num1, '#num1')
+  check('#n1','#n2',num1, '#num1');
 });
 $("#n2").on("keyup", function() {
-  check('#n2','#n3',num2, '#num2')
+  check('#n2','#n3',num2, '#num2');
 });
 $("#n3").on("keyup", function() {
-  check('#n3','',num3,'#n3')
+  check('#n3','',num3,'#n3');
 });
 canvas(39,num1);
-$("#n1").offset({top:385, left:controlX2-10});
+
+var inputs = [];
+inputs.push($("#n1:eq(0)"));
+//inputs.push($("#n2:eq(1)"));
+inputs[0].css('left', function(){
+var pozleft = controlX2+30;
+return pozleft;
+});
+
 var inps, next, checks, style;
 var endX2, control2X2;
 function check(inps,next,checks,style){
@@ -55,8 +63,16 @@ function check(inps,next,checks,style){
 			if(inps == '#n1')
 			{
 				canvas(endX1, num2);
-				$("#n2").offset({top:385, left:controlX2-10});
-				i++;
+				var cont = controlX2;
+				alert(cont);
+				inputs.push($("#n2:eq(1)"));
+				inputs[1].css('left', function(){
+				var pozleft = controlX2+30;
+				alert(controlX2);
+				alert(pozleft);
+				return pozleft;
+				});
+				//$("#n2").offset({top:385, left:controlX2-10});
 			}
     }
     else{

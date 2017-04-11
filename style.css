@@ -1,7 +1,8 @@
 #maincontent{
 display: inline-block; //Для того, чтобы родитель воспринимался, как строчный элемент
 width: 500px; // Указать минимальное подходящее значение
-position: relative;
+/*position: absolute;*/
+/*position:relative;*/
 }
 body{
 	text-align: center;
@@ -48,4 +49,12 @@ background-color: yellow;
 .right {
 	color:black;
 	background-color: white;
+}
+#n1{
+	position: relative;
+	top: -150px;
+}
+#n2{
+	position: relative;
+	top: -150px;
 }
