@@ -45,11 +45,11 @@ canvas(39,num1);
 
 var inputs = [];
 inputs.push($("#n1:eq(0)"));
-//inputs.push($("#n2:eq(1)"));
+inputs.push($("#n2:eq(1)"));
 inputs[0].css('left', function(){
 var pozleft = controlX2+30;
 return pozleft;
-});
+}());
 
 var inps, next, checks, style;
 var endX2, control2X2;
@@ -65,13 +65,14 @@ function check(inps,next,checks,style){
 				canvas(endX1, num2);
 				var cont = controlX2;
 				alert(cont);
-				inputs.push($("#n2:eq(1)"));
+				alert(inputs[1]);
 				inputs[1].css('left', function(){
+					alert('nen');
 				var pozleft2 = cont+30;
 				alert(cont);
 				alert(pozleft2);
 				return pozleft2;
-				});
+			}());
 				//$("#n2").offset({top:385, left:controlX2-10});
 			}
     }
