@@ -67,6 +67,7 @@ function check(inps,next,checks,style){
 				//$("#n2").offset({top:385, left:controlX2-10});
 			}
     }
+
     else{
 			var colorf = $(style);
 			colorf.addClass("wrong");
