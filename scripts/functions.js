@@ -1,5 +1,4 @@
   var clear = $( "input:reset" );
-  alert('zzzzz');
 	function getRandom(min, max){
 		  return Math.round(Math.random() * (max - min) + min);
 		}
@@ -25,10 +24,10 @@
     outs:$('#num3'),
     selfs:$('#n3')
 	};
-  alert('zzzzz');
-//	$('#num1').html(num1);
-  input1.selfs.html(num1);
-	input1.selfs.html(num2);
+
+  input1.outs.html(num1);
+	input2.outs.html(num2);
+  
 	function canvas (start, num){
 		var canvas = $('#c1');
 		var ctx = canvas[0].getContext('2d');
@@ -50,17 +49,18 @@
 	}
 
   input1.selfs.on("keyup", function() {
-  	filling ('#n1',input1);
-  	check('#n1','#n2', '#num1',input1);
+  	filling (input1.selfs,input1);
+  	check(input2.selfs, input1.outs,input1);
   });
   input2.selfs.on("keyup", function() {
-  	filling ('#n2',input2);
-  	check('#n2','#n3', '#num2',input2);
+  	filling (input2.selfs,input2);
+  	check(input3.selfs, input2.outs,input2);
   });
   input3.selfs.on("keyup", function() {
-  	filling ('#n3',input3);
-  	check('#n3','','#n3',input3);
+  	filling (input3.selfs,input3);
+  	check('',input3.selfs,input3);
   });
+
   canvas(39,num1);
   	function filling (inps,obj){
   		var ins = $(inps).val();
@@ -72,18 +72,17 @@
 	inputs.push(input1.selfs);
 	inputs.push(input2.selfs);
 	var pozleft = controlX2-10;
-  //input1.selfs.css('left', pozleft);
 	inputs[0].css('left', pozleft);
 	var inps, next, style;
 	var endX2, pozleft2;
 
-	function check(inps,next,style,obj){
+	function check(next,style,obj){
 			if (obj.invalue == obj.rightValue)
 			{
 					var colorr = $(style);
 					colorr.addClass("right");
 				  $(next).show();
-				if(inps == '#n1')
+				if(obj == input1)
 				{
 					canvas(endX1, num2);
 					var cont = controlX2;
