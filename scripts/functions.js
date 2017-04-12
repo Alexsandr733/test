@@ -35,7 +35,8 @@
 			colorr.addClass("right");
 			$(next).show();
       if (obj == input1 && obj.canvStop==0){
-    		canvas(endX1, num2);
+        var startArc = endX1;
+    		canvas(startArc, num2);
         obj.canvStop=1;
     		var cont = controlX2;
     		var pozleft2 = cont-10;

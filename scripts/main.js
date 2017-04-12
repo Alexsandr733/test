@@ -3,7 +3,8 @@
   $('#n2').val('');
   $('#n3').val('');
 
-  var endX1, controlX2, num1, num2, num3, interval;
+  var endX1, controlX2, num1, num2, num3, interval, arcCenter;
+
 
   num1=getRandom(6, 9);
   interval=14-num1;
@@ -52,5 +53,10 @@
   var inputs = [];
   inputs.push(input1.selfs);
   inputs.push(input2.selfs);
-  var pozleft = controlX2-10;
-  inputs[0].css('left', pozleft);
+//  var pozleft = controlX2-10;
+  //inputs[0].css('left', pozleft);
+  arcCenter=controlX2;
+  inputs[0].css('left', function(){
+    var pozleft = arcCenter-10;
+	        return pozleft;
+	    }());
