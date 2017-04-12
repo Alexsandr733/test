@@ -9,7 +9,7 @@
 	var input1 = {
 		rightValue: num1,
     outs:$('#num1'),
-    selfs:$('#n1').val(),
+    selfs:$('#n1'),
     canvStop:0
 	};
 	var input2 = {
