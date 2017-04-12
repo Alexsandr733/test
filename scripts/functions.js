@@ -1,5 +1,5 @@
   var clear = $( "input:reset" );
-
+  alert('zzzzz');
 	function getRandom(min, max){
 		  return Math.round(Math.random() * (max - min) + min);
 		}
@@ -12,20 +12,23 @@
 
 	var input1 = {
 		rightValue: num1,
+    outs:$('#num1'),
     selfs:$('#n1')
 	};
 	var input2 = {
 		rightValue: num2,
+    outs:$('#num2'),
     selfs:$('#n2')
 	};
 	var input3 = {
 		rightValue: num3,
+    outs:$('#num3'),
     selfs:$('#n3')
 	};
-  alert(input1.selfs);
+  alert('zzzzz');
 //	$('#num1').html(num1);
   input1.selfs.html(num1);
-	$('#num2').html(num2);
+	input1.selfs.html(num2);
 	function canvas (start, num){
 		var canvas = $('#c1');
 		var ctx = canvas[0].getContext('2d');
@@ -45,30 +48,31 @@
 		ctx.lineTo(endX1-3,185);
 		ctx.stroke();
 	}
-$("#n1").on("keyup", function() {
-	filling ('#n1',input1);
-	check('#n1','#n2', '#num1',input1);
-});
-$("#n2").on("keyup", function() {
-	filling ('#n2',input2);
-	check('#n2','#n3', '#num2',input2);
-});
-$("#n3").on("keyup", function() {
-	filling ('#n3',input3);
-	check('#n3','','#n3',input3);
-});
-canvas(39,num1);
-	function filling (inps,obj){
-		var ins = $(inps).val();
-		ins = parseInt(ins);
-		obj.invalue=ins;
-	}
+
+  input1.selfs.on("keyup", function() {
+  	filling ('#n1',input1);
+  	check('#n1','#n2', '#num1',input1);
+  });
+  input2.selfs.on("keyup", function() {
+  	filling ('#n2',input2);
+  	check('#n2','#n3', '#num2',input2);
+  });
+  input3.selfs.on("keyup", function() {
+  	filling ('#n3',input3);
+  	check('#n3','','#n3',input3);
+  });
+  canvas(39,num1);
+  	function filling (inps,obj){
+  		var ins = $(inps).val();
+  		ins = parseInt(ins);
+  		obj.invalue=ins;
+  	}
 
 	var inputs = [];
-	inputs.push($("#n1"));
-	inputs.push($("#n2"));
+	inputs.push(input1.selfs);
+	inputs.push(input2.selfs);
 	var pozleft = controlX2-10;
-  //input1.pozi.css('left', pozleft);
+  //input1.selfs.css('left', pozleft);
 	inputs[0].css('left', pozleft);
 	var inps, next, style;
 	var endX2, pozleft2;
