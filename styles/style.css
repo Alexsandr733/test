@@ -16,7 +16,7 @@ body{
 	margin-top: 10%;
 }
 canvas{
-	margin-top: 0px;
+	margin: 0px;
 	background-image: url('../images/sprite.png');
   background-position: left bottom;
 	background-repeat: no-repeat;
