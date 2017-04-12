@@ -1,4 +1,6 @@
 
+var clear = $( "input:reset" );
+
 var inps, next, style;
 var endX2, pozleft2;
 
