@@ -33,20 +33,17 @@
 
   input1.selfs.on("keyup", function() {
   	filling (input1.selfs,input1);
-  	check(input2.selfs, input1.outs,input1);
-    paint();
+  	check(input2.selfs, input1.outs,input1,endX1);
   });
 
   input2.selfs.on("keyup", function() {
   	filling (input2.selfs,input2);
-  	check(input3.selfs, input2.outs,input2);
-    paint();
+  	check(input3.selfs, input2.outs,input2,'');
   });
 
   input3.selfs.on("keyup", function() {
   	filling (input3.selfs,input3);
-  	check('',input3.selfs,input3);
-    paint();
+  	check('',input3.selfs,input3,'');
   });
 
   canvas(39,num1);
@@ -54,7 +51,6 @@
   inputs.push(input1.selfs);
   inputs.push(input2.selfs);
   arcCenter=controlX2;
-  inputs[0].css('left', function(){
-    var pozleft = arcCenter-10;
-	        return pozleft;
-	    }());
+  var cont = controlX2;
+  var pozleft2 = cont-10;
+  inputs[0].css('left', pozleft2);

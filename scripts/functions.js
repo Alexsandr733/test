@@ -29,17 +29,17 @@
     obj.invalue=ins;
   }
 
-	function check(next,style,obj){
+	function check(next,style,obj,startArc){
 		if (obj.invalue == obj.rightValue){
       var colorr = style;
 			colorr.addClass("right");
 			$(next).show();
       if (obj == input1 && obj.canvStop==0){
-        var startArc = endX1;
-    		canvas(startArc, num2);
+      //  var startArc = endX1;
+    		canvas(startArc, input2.rightValue);
         obj.canvStop=1;
-    		var cont = controlX2;
-    		var pozleft2 = cont-10;
+    		cont = controlX2;
+    		pozleft2 = cont-10;
     		inputs[1].css('left', pozleft2);
     	}
   	}
