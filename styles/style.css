@@ -1,6 +1,6 @@
 #maincontent{
 	display: inline-block;
-	width: 1050px;
+	width: 950px;
 
 	position:relative;
 }
@@ -51,10 +51,10 @@ canvas{
 }
 #n1{
 	position: absolute;
-	top: 300px;
+	top: 350px;
 	display: inline-block;
 }
 #n2{
 	position: absolute;
-	top: 300px;
+	top: 350px;
 }
