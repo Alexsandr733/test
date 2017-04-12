@@ -38,7 +38,7 @@
     		canvas(endX1, num2);
         obj.canvStop=1;
     		var cont = controlX2;
-    		pozleft2 = cont-10;
+    		var pozleft2 = cont-10;
     		inputs[1].css('left', pozleft2);
     	}
   	}

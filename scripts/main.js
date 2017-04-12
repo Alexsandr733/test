@@ -4,7 +4,6 @@
   $('#n3').val('');
 
   var endX1, controlX2, num1, num2, num3, interval;
-  var endX2, pozleft2;
 
   num1=getRandom(6, 9);
   interval=14-num1;
@@ -48,6 +47,7 @@
   	check('',input3.selfs,input3);
     paint();
   });
+
   canvas(39,num1);
   var inputs = [];
   inputs.push(input1.selfs);
