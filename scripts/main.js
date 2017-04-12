@@ -53,8 +53,6 @@
   var inputs = [];
   inputs.push(input1.selfs);
   inputs.push(input2.selfs);
-//  var pozleft = controlX2-10;
-  //inputs[0].css('left', pozleft);
   arcCenter=controlX2;
   inputs[0].css('left', function(){
     var pozleft = arcCenter-10;
