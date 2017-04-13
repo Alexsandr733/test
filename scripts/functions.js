@@ -21,6 +21,8 @@
     ctx.moveTo(endX1, 199);
     ctx.lineTo(endX1-3,185);
     ctx.stroke();
+		//z = controlX2;
+		return(controlX2);
   }
 
 	function filling (elmass){
@@ -31,8 +33,7 @@
   }
 
 	//function check(next,style,obj,startArc,cont){
-	function check(next,elmass,startArc,cont){
-		alert(cont);
+	function check(next,elmass,startArc){
 		if (elmass.invalue == elmass.rightValue){
 			if(elmass!=input3){
 				elmass.outs.addClass("right");
@@ -42,12 +43,9 @@
 			}
 				$(next).show();
 	      if (elmass == input1 && elmass.canvStop==0){
-	    		canvas(startArc, input2.rightValue);
 	        elmass.canvStop=1;
-	    //	var	cont = controlX2;
+					var cont = canvas(startArc, input2.rightValue);
 	    		var pozleft2 = cont-10;
-					alert(pozleft2);
-					alert(cont);
 	    		data[1].selfs.css('left', pozleft2);
 	    	}
 	  }
