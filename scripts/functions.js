@@ -23,16 +23,21 @@
     ctx.stroke();
   }
 
-  function filling (obj){
-    //var ins = $(inps).val();
-    alert(obj.selfs);
-  //  var ins = obj.selfs
-    //ins = parseInt(ins);
-    //ins = parseInt(obj.selfs);
-    //alert(ins);
-    //obj.invalue=ins;
-    obj.selfs=obj.invalue;
-    alert(obj.invalue);
+/* function filling (inps,obj){
+    var ins = $(inps).val();
+    ins = parseInt(ins);
+    obj.invalue=ins;
+		*/
+		function filling (obj){
+				alert('in');
+		    //var ins = $(obj.selfs).val();
+				var ins =obj.selfs
+				alert(obj.selfs);
+				alert(ins);
+				alert(obj.selfs);
+		    ins = parseInt(ins);
+		    obj.invalue=ins;
+
   }
 
 	function check(next,style,obj,startArc,cont){
