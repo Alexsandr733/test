@@ -11,20 +11,22 @@
     outs:$('#num1'),
     selfs:$('#n1'),
     canvStop:0,
-    invalue:0
 	};
 	var input2 = {
 		rightValue: num2,
     outs:$('#num2'),
     selfs:$('#n2'),
-    invalue:0
 	};
 	var input3 = {
 		rightValue: num3,
     outs:$('#num3'),
     selfs:$('#n3'),
-    invalue:0
 	};
+
+  var data = [];
+  data.push(input1);
+  data.push(input2);
+  data.push(input3);
 
   input1.selfs.val('');
   input2.selfs.val('');
@@ -34,20 +36,23 @@
 	input2.outs.html(num2);
 
   input1.selfs.on("keyup", function() {
-  	//filling (input1.selfs,input1);
-    //filling (input);
+  //	filling (input1.selfs,input1);
+    filling(data[0]);
+  //  filling (input1);
   	check(input2.selfs, input1.outs,input1,endX1);
   });
 
   input2.selfs.on("keyup", function() {
-  //filling (input2.selfs,input2);
-    filling (input);
+    //filling (input2.selfs,input2);
+    filing(data[1]);
+    //filling (input2);
   	check(input3.selfs, input2.outs,input2,'');
   });
 
   input3.selfs.on("keyup", function() {
-  	filling (input3.selfs,input3);
-    filling (input);
+  	//filling (input3.selfs,input3);
+    filing(data[2]);
+    //filling (input3);
   	check('',input3.selfs,input3,'');
   });
 

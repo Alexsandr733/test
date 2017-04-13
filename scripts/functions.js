@@ -22,26 +22,26 @@
     ctx.lineTo(endX1-3,185);
     ctx.stroke();
   }
-
-/* function filling (inps,obj){
+/*
+ function filling (inps,obj){
     var ins = $(inps).val();
     ins = parseInt(ins);
     obj.invalue=ins;
-		*/
-		function filling (obj){
-				alert('in');
+*/
+		function filling (elmass){
 		    //var ins = $(obj.selfs).val();
-				var ins =obj.selfs
-				alert(obj.selfs);
+				var ins =elmass.selfs;
+				alert(attr(elmass.selfs));
 				alert(ins);
-				alert(obj.selfs);
+			//	alert(obj.selfs);
 		    ins = parseInt(ins);
-		    obj.invalue=ins;
-
+		    elmass.invalue=ins;
+				//elmass.obj.invalue=elmass.obj.selfs;
   }
 
 	function check(next,style,obj,startArc,cont){
 		if (obj.invalue == obj.rightValue){
+	//if (obj.selfs == obj.rightValue){
       var colorr = style;
 			colorr.addClass("right");
 			$(next).show();
