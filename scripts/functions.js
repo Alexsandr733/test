@@ -22,41 +22,41 @@
     ctx.lineTo(endX1-3,185);
     ctx.stroke();
   }
-/*
- function filling (inps,obj){
-    var ins = $(inps).val();
-    ins = parseInt(ins);
-    obj.invalue=ins;
-*/
-		function filling (elmass){
-		    //var ins = $(obj.selfs).val();
-				var ins =elmass.selfs;
-				alert(elmass.selfs);
-				alert(ins);
-			//	alert(obj.selfs);
+
+	function filling (elmass){
+
+				var ins =elmass.selfs.val();
 		    ins = parseInt(ins);
 		    elmass.invalue=ins;
-				//elmass.obj.invalue=elmass.obj.selfs;
   }
 
-	function check(next,style,obj,startArc,cont){
-		alert(obj.invalue);
-		if (obj.invalue == obj.rightValue){
-	//if (obj.selfs == obj.rightValue){
-      var colorr = style;
-			colorr.addClass("right");
-			$(next).show();
-      if (obj == input1 && obj.canvStop==0){
-      //  var startArc = endX1;
-    		canvas(startArc, input2.rightValue);
-        obj.canvStop=1;
-    		cont = controlX2;
-    		pozleft2 = cont-10;
-    		inputs[1].css('left', pozleft2);
-    	}
-  	}
-	  else{
-			var colorf = $(style);
-			colorf.addClass("wrong");
+	//function check(next,style,obj,startArc,cont){
+	function check(next,elmass,startArc,cont){
+		alert(cont);
+		if (elmass.invalue == elmass.rightValue){
+			if(elmass!=input3){
+				elmass.outs.addClass("right");
+			}
+			else{
+				elmass.selfs.addClass("right");
+			}
+				$(next).show();
+	      if (elmass == input1 && elmass.canvStop==0){
+	    		canvas(startArc, input2.rightValue);
+	        elmass.canvStop=1;
+	    //	var	cont = controlX2;
+	    		var pozleft2 = cont-10;
+					alert(pozleft2);
+					alert(cont);
+	    		data[1].selfs.css('left', pozleft2);
+	    	}
 	  }
+		else{
+			if(elmass!=input3){
+				elmass.outs.addClass("wrong");
+			}
+			else{
+				elmass.selfs.addClass("wrong");
+			}
+		}
 	}

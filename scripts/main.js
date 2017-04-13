@@ -28,38 +28,41 @@
   data.push(input2);
   data.push(input3);
 
-  input1.selfs.val('');
-  input2.selfs.val('');
-  input3.selfs.val('');
+  data[0].selfs.val('');
+  data[1].selfs.val('');
+  data[2].selfs.val('');
 
-  input1.outs.html(num1);
-	input2.outs.html(num2);
+  data[0].outs.html(num1);
+	data[1].outs.html(num2);
 
-  input1.selfs.on("keyup", function() {
-  //	filling (input1.selfs,input1);
+  data[0].selfs.on("keyup", function() {
+  //illing (input1.selfs,input1);
     filling(data[0]);
-  //  filling (input1);
-  	check(input2.selfs, input1.outs,input1,endX1);
+  //filling (input1);
+  //check(input2.selfs, input1.outs,input1,endX1);
+    check(data[1].selfs,data[0],endX1,controlX2);
   });
 
-  input2.selfs.on("keyup", function() {
+  data[1].selfs.on("keyup", function() {
     //filling (input2.selfs,input2);
-    filing(data[1]);
+    filling(data[1]);
     //filling (input2);
-  	check(input3.selfs, input2.outs,input2,'');
+  	//check(input3.selfs, input2.outs,input2,'');
+    check(data[2].selfs,data[1],'',controlX2);
   });
 
-  input3.selfs.on("keyup", function() {
+  data[2].selfs.on("keyup", function() {
   	//filling (input3.selfs,input3);
-    filing(data[2]);
+    filling(data[2]);
     //filling (input3);
-  	check('',input3.selfs,input3,'');
+  	//check('',input3.selfs,input3,'');
+    check('',data[2],'',controlX2);
   });
 
   canvas(39,num1);
-  var inputs = [];
-  inputs.push(input1.selfs);
-  inputs.push(input2.selfs);
-  var cont = controlX2;
-  var pozleft2 = cont-10;
-  inputs[0].css('left', pozleft2);
+
+  data.push(input1.selfs);
+  data.push(input2.selfs);
+  var cont1 = controlX2;
+  var pozleft = cont1-10;
+  data[0].selfs.css('left', pozleft);
