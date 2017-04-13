@@ -31,7 +31,7 @@
 		function filling (elmass){
 		    //var ins = $(obj.selfs).val();
 				var ins =elmass.selfs;
-				alert(attr(elmass.selfs));
+				alert(elmass.selfs);
 				alert(ins);
 			//	alert(obj.selfs);
 		    ins = parseInt(ins);
@@ -40,6 +40,7 @@
   }
 
 	function check(next,style,obj,startArc,cont){
+		alert(obj.invalue);
 		if (obj.invalue == obj.rightValue){
 	//if (obj.selfs == obj.rightValue){
       var colorr = style;
