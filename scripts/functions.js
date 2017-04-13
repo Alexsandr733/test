@@ -21,7 +21,6 @@
     ctx.moveTo(endX1, 199);
     ctx.lineTo(endX1-3,185);
     ctx.stroke();
-		//z = controlX2;
 		return(controlX2);
   }
 
@@ -33,28 +32,34 @@
   }
 
 	//function check(next,style,obj,startArc,cont){
-	function check(next,elmass,startArc){
-		if (elmass.invalue == elmass.rightValue){
-			if(elmass!=input3){
-				elmass.outs.addClass("right");
+//	function check(next,elmass,startArc){
+	function check(mass, iterator, startArc){
+
+		if (mass[iterator].invalue == mass[iterator].rightValue){
+			if(mass[iterator]!=input3){
+				mass[iterator].outs.addClass("right");
 			}
 			else{
-				elmass.selfs.addClass("right");
+				mass[iterator].selfs.addClass("right");
 			}
-				$(next).show();
-	      if (elmass == input1 && elmass.canvStop==0){
-	        elmass.canvStop=1;
-					var cont = canvas(startArc, input2.rightValue);
+				next = iterator+1;
+				$(mass[next].selfs).show();
+	      if (mass[iterator] == input1 && mass[iterator].canvStop==0){
+	        mass[iterator].canvStop=1;
+				//var cont = canvas(startArc, input2.rightValue);
+					var cont = canvas(startArc, mass[1].rightValue);
 	    		var pozleft2 = cont-10;
-	    		data[1].selfs.css('left', pozleft2);
+					alert(cont);
+					alert(pozleft2);
+	    		mass[1].selfs.css('left', pozleft2);
 	    	}
 	  }
 		else{
-			if(elmass!=input3){
-				elmass.outs.addClass("wrong");
+			if(mass[iterator]!=input3){
+				mass[iterator].outs.addClass("wrong");
 			}
 			else{
-				elmass.selfs.addClass("wrong");
+				mass[iterator].selfs.addClass("wrong");
 			}
 		}
 	}

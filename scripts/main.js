@@ -1,5 +1,5 @@
 
-  var endX1, controlX2, num1, num2, num3, interval, z;
+  var endX1, controlX2, num1, num2, num3, interval;
 
   num1=getRandom(6, 9);
   interval=14-num1;
@@ -11,8 +11,6 @@
     outs:$('#num1'),
     selfs:$('#n1'),
     canvStop:0,
-    testStart:endX1
-
 	};
 	var input2 = {
 		rightValue: num2,
@@ -38,11 +36,13 @@
 	data[1].outs.html(num2);
 
   data[0].selfs.on("keyup", function() {
-  //illing (input1.selfs,input1);
-    filling(data[0]);
+    //illing (input1.selfs,input1);
+  filling(data[0]);
     //filling (input1);
     //check(input2.selfs, input1.outs,input1,endX1);
-    check(data[1].selfs,data[0],endX1);
+  //  check(data[1].selfs,data[0],endX1);
+  check(data,0,endX1);
+
   });
 
   data[1].selfs.on("keyup", function() {
@@ -50,7 +50,8 @@
     filling(data[1]);
     //filling (input2);
   	//check(input3.selfs, input2.outs,input2,'');
-    check(data[2].selfs,data[1],'');
+    //check(data[2].selfs,data[1],'');
+    check(data,1,'');
   });
 
   data[2].selfs.on("keyup", function() {
@@ -58,13 +59,13 @@
     filling(data[2]);
     //filling (input3);
   	//check('',input3.selfs,input3,'');
-    check('',data[2],'');
+    //check('',data[2],'');
+    check(data,2,'');
   });
-
-  canvas(39,num1);
 
   data.push(input1.selfs);
   data.push(input2.selfs);
-  var cont1 = controlX2;
+
+  var cont1 = canvas(39,num1);
   var pozleft = cont1-10;
   data[0].selfs.css('left', pozleft);
