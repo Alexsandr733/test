@@ -3,7 +3,11 @@
   	return Math.round(Math.random() * (max - min) + min);
 	}
 
-	function canvas (start, num){
+//	function canvas (start, num, mass){
+	function canvas (mass, iterator){
+		var start = mass[0].startArc;
+		var num = mass[iterator].rightValue;
+		var span = {}
     var canvas = $('#c1');
     var ctx = canvas[0].getContext('2d');
     ctx.beginPath();
@@ -11,8 +15,8 @@
     var controlY1=199;
     var controlY2=50;
     var endY=199;
-    endX1 = (num*38.5)+start;
-    controlX2 = ((endX1-start)/2)+start;
+    var endX1 = (num*38.5)+start;
+    var controlX2 = ((endX1-start)/2)+start;
     ctx.strokeStyle = 'red';
     ctx.lineWidtx = 2;
     ctx.moveTo(start, 199);
@@ -21,7 +25,10 @@
     ctx.moveTo(endX1, 199);
     ctx.lineTo(endX1-3,185);
     ctx.stroke();
-		return(controlX2);
+		span.starts = start;
+		span.ends = endX1;
+		mass[0].startArc = endX1;
+		return(span);
   }
 
 	function filling (elmass){
@@ -31,7 +38,9 @@
 		    elmass.invalue=ins;
   }
 
-	function check(mass, iterator, startArc){
+
+
+	function check(mass, iterator){
 
 		if (mass[iterator].invalue == mass[iterator].rightValue){
 			if(mass[iterator]!=input3){
@@ -44,8 +53,12 @@
 				$(mass[next].selfs).show();
 	      if (mass[iterator] == input1 && mass[iterator].canvStop==0){
 	        mass[iterator].canvStop=1;
-					var cont = canvas(startArc, mass[1].rightValue);
+					var ret = canvas(data, 1);
+					var end = ret.ends; // получение из возвращённого обьекта значения конца арки
+					var start = ret.starts;// получение из возвращённого обьекта значения начала арки
+					var cont = ((end-start)/2)+start;// середина дуги для расположения input
 	    		var pozleft2 = cont-10;
+					alert(pozleft);
 	    		mass[1].selfs.css('left', pozleft2);
 	    	}
 	  }
