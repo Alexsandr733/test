@@ -29,7 +29,6 @@
   data.push(input2);
   data.push(input3);
 
-
   data[0].selfs.val('');
   data[1].selfs.val('');
   data[2].selfs.val('');
@@ -52,12 +51,4 @@
     check(data,2);
   });
 
-  data.push(input1.selfs);
-  data.push(input2.selfs);
-
-  var ret = canvas(data,0);//массив и номер элемента с значением размера дуги
-  var end = ret.ends; // получение из возвращённого обьекта значения конца арки
-  var start = ret.starts;// получение из возвращённого обьекта значения начала арки
-  var cont1 = ((end-start)/2)+start;// середина дуги для расположения input
-  var pozleft = cont1-10;
-  data[0].selfs.css('left', pozleft);
+  showInput(data, 0);
