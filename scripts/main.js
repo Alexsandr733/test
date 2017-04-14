@@ -24,7 +24,6 @@
     selfs:$('#n3'),
 	};
 
-
   var data = [];
   data.push(input1);
   data.push(input2);

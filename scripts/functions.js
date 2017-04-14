@@ -38,8 +38,6 @@
 		    elmass.invalue=ins;
   }
 
-
-
 	function check(mass, iterator){
 
 		if (mass[iterator].invalue == mass[iterator].rightValue){
@@ -58,7 +56,6 @@
 					var start = ret.starts;// получение из возвращённого обьекта значения начала арки
 					var cont = ((end-start)/2)+start;// середина дуги для расположения input
 	    		var pozleft2 = cont-10;
-					alert(pozleft);
 	    		mass[1].selfs.css('left', pozleft2);
 	    	}
 	  }
