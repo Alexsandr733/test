@@ -36,30 +36,18 @@
 	data[1].outs.html(num2);
 
   data[0].selfs.on("keyup", function() {
-    //illing (input1.selfs,input1);
   filling(data[0]);
-    //filling (input1);
-    //check(input2.selfs, input1.outs,input1,endX1);
-  //  check(data[1].selfs,data[0],endX1);
   check(data,0,endX1);
 
   });
 
   data[1].selfs.on("keyup", function() {
-    //filling (input2.selfs,input2);
     filling(data[1]);
-    //filling (input2);
-  	//check(input3.selfs, input2.outs,input2,'');
-    //check(data[2].selfs,data[1],'');
     check(data,1,'');
   });
 
   data[2].selfs.on("keyup", function() {
-  	//filling (input3.selfs,input3);
     filling(data[2]);
-    //filling (input3);
-  	//check('',input3.selfs,input3,'');
-    //check('',data[2],'');
     check(data,2,'');
   });
 

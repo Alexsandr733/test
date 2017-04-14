@@ -31,8 +31,6 @@
 		    elmass.invalue=ins;
   }
 
-	//function check(next,style,obj,startArc,cont){
-//	function check(next,elmass,startArc){
 	function check(mass, iterator, startArc){
 
 		if (mass[iterator].invalue == mass[iterator].rightValue){
@@ -46,11 +44,8 @@
 				$(mass[next].selfs).show();
 	      if (mass[iterator] == input1 && mass[iterator].canvStop==0){
 	        mass[iterator].canvStop=1;
-				//var cont = canvas(startArc, input2.rightValue);
 					var cont = canvas(startArc, mass[1].rightValue);
 	    		var pozleft2 = cont-10;
-					alert(cont);
-					alert(pozleft2);
 	    		mass[1].selfs.css('left', pozleft2);
 	    	}
 	  }
