@@ -17,11 +17,13 @@
 		rightValue: num2,
     outs:$('#num2'),
     selfs:$('#n2'),
+    canvStop:0
 	};
 	var input3 = {
 		rightValue: num3,
     outs:$('#num3'),
     selfs:$('#n3'),
+    canvStop:1
 	};
 
   var data = [];
@@ -51,4 +53,5 @@
     check(data,2);
   });
 
-  showInput(data, 0);
+  var ret = canvas(data, 0);
+  showInput(data, 0, ret);
